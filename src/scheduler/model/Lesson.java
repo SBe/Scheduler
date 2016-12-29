@@ -5,8 +5,6 @@
  */
 package scheduler.model;
 
-import javafx.collections.ObservableList;
-
 /**
  *
  * @author adrian
@@ -53,6 +51,18 @@ public class Lesson {
     
     public void setRoom(Room room){
         this.room = room;
+    }
+    
+    public String getLesson(){
+        StringBuilder lesson = new StringBuilder();
+        lesson.append(course.getName().get());
+        lesson.append(" ");
+        lesson.append(professor.getName().get());
+        lesson.append(" ");
+        lesson.append(professor.getSurname().get());
+        lesson.append(" ");
+        lesson.append(room.getId().get());
+        return lesson.toString();
     }
     
     public void loadCourse(Course course){
