@@ -22,8 +22,10 @@ public class Data {
     private static final ObservableList<Room> Rooms = FXCollections.observableArrayList();
     private static Schedule schedule;
     private static int groupCount;
+    private static int selectionParameter;
     private static final int DAYS = 5;
-    private static final int HOURS = 6;
+    private static final int HOURS = 6; 
+    
     
     public static void initData(){
         Professors.addAll(filereadUtil.readProfessors());
@@ -35,6 +37,7 @@ public class Data {
         filereadUtil.loadLessons(Lessons, Courses, Groups, Professors, Rooms);
         
         groupCount = filereadUtil.getGroupCount();
+        selectionParameter = groupCount/2;
     }
     
     public static ObservableList<Lesson> getLessons(){
@@ -67,6 +70,10 @@ public class Data {
     
     public static int getHours(){
         return HOURS;
+    }
+    
+    public static int getSelectionParam(){
+        return selectionParameter;
     }
     
     public static ObservableList<String> getGroupList(){
